@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+</head>
+
+<body>
+
+    <h1>Form đặt hàng</h1>
+
+    <!-- PHẦN 1 -->
+    <!-- GIỎ HÀNG -->
+
+    <h2>Giỏ hàng</h2>
+
+    <table border="1" cellpadding="10">
+
+        <thead>
+
+            <tr>
+                <th>STT</th>
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>1</td>
+                <td>iPhone 16 Pro Max</td>
+                <td>25.990.000đ</td>
+                <td>1</td>
+                <td>25.990.000đ</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>MacBook Air M3</td>
+                <td>31.990.000đ</td>
+                <td>1</td>
+                <td>31.990.000đ</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>AirPods Pro</td>
+                <td>5.990.000đ</td>
+                <td>2</td>
+                <td>11.980.000đ</td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+
+            <tr>
+
+                <td colspan="4">
+                    <strong>Tổng cộng</strong>
+                </td>
+
+                <td>
+                    <strong>69.960.000đ</strong>
+                </td>
+
+            </tr>
+
+        </tfoot>
+
+    </table>
+
+    <hr>
+
+    <!-- PHẦN 2 -->
+    <!-- FORM THANH TOÁN -->
+
+    <h2>Thông tin thanh toán</h2>
+
+    <form action="#" method="POST">
+
+        <!-- Datalist bonus -->
+
+        <div>
+
+            <label for="search">
+                Tìm sản phẩm:
+            </label>
+
+            <input
+                type="text"
+                id="search"
+                name="search"
+                list="products"
+                placeholder="Nhập tên sản phẩm">
+
+            <datalist id="products">
+                <option value="iPhone 16 Pro Max">
+                <option value="MacBook Air M3">
+                <option value="AirPods Pro">
+            </datalist>
+
+        </div>
+
+        <br>
+
+        <!-- Radio payment -->
+
+        <fieldset>
+
+            <legend>Phương thức thanh toán</legend>
+
+            <input
+                type="radio"
+                id="cod"
+                name="payment"
+                value="COD"
+                required>
+
+            <label for="cod">
+                COD
+            </label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="bank"
+                name="payment"
+                value="Bank">
+
+            <label for="bank">
+                Chuyển khoản
+            </label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="wallet"
+                name="payment"
+                value="Wallet">
+
+            <label for="wallet">
+                Ví điện tử
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- Mã giảm giá -->
+
+        <div>
+
+            <label for="coupon">
+                Mã giảm giá:
+            </label>
+
+            <input
+                type="text"
+                id="coupon"
+                name="coupon"
+                pattern="SALE[0-9]{4}"
+                placeholder="SALE2026"
+                title="Nhập đúng định dạng SALE2026">
+
+        </div>
+
+        <br>
+
+        <!-- Ghi chú -->
+
+        <div>
+
+            <label for="note">
+                Ghi chú:
+            </label>
+
+            <br>
+
+            <textarea
+                id="note"
+                name="note"
+                rows="4"
+                placeholder="Nhập ghi chú nếu có"></textarea>
+
+        </div>
+
+        <hr>
+
+        <!-- PHẦN 3 -->
+        <!-- GIAO HÀNG -->
+
+        <h2>Thông tin giao hàng</h2>
+
+        <!-- Họ tên -->
+
+        <div>
+
+            <label for="fullname">
+                Họ và tên:
+            </label>
+
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                required
+                placeholder="Nhập họ tên">
+
+        </div>
+
+        <br>
+
+        <!-- Email -->
+
+        <div>
+
+            <label for="email">
+                Email:
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="example@gmail.com">
+
+        </div>
+
+        <br>
+
+        <!-- SĐT -->
+
+        <div>
+
+            <label for="phone">
+                Số điện thoại:
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10}"
+                placeholder="0901234567"
+                required>
+
+        </div>
+
+        <br>
+
+        <!-- Thành phố -->
+
+        <div>
+
+            <label for="city">
+                Thành phố:
+            </label>
+
+            <select
+                id="city"
+                name="city"
+                required>
+
+                <option value="">
+                    -- Chọn thành phố --
+                </option>
+
+                <option value="HaNoi">
+                    Hà Nội
+                </option>
+
+                <option value="HCM">
+                    TP.HCM
+                </option>
+
+                <option value="DaNang">
+                    Đà Nẵng
+                </option>
+
+                <option value="CanTho">
+                    Cần Thơ
+                </option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <!-- Địa chỉ -->
+
+        <div>
+
+            <label for="address">
+                Địa chỉ:
+            </label>
+
+            <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="Nhập địa chỉ giao hàng"
+                required></textarea>
+
+        </div>
+
+        <br>
+
+        <!-- Ngày giao hàng -->
+
+        <div>
+
+            <label for="deliveryDate">
+                Ngày giao hàng mong muốn:
+            </label>
+
+            <input
+                type="date"
+                id="deliveryDate"
+                name="deliveryDate"
+                min="2026-05-24"
+                required>
+
+        </div>
+
+        <br>
+
+        <!-- Khung giờ -->
+
+        <div>
+
+            <label for="timeSlot">
+                Khung giờ:
+            </label>
+
+            <select
+                id="timeSlot"
+                name="timeSlot"
+                required>
+
+                <option value="">
+                    -- Chọn khung giờ --
+                </option>
+
+                <option value="Morning">
+                    Sáng 8-12h
+                </option>
+
+                <option value="Afternoon">
+                    Chiều 14-18h
+                </option>
+
+                <option value="Evening">
+                    Tối 18-21h
+                </option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <!-- Range -->
+
+        <div>
+
+            <label for="deliveryTime">
+                Thời gian giao hàng (ngày):
+            </label>
+
+            <input
+                type="range"
+                id="deliveryTime"
+                name="deliveryTime"
+                min="1"
+                max="7"
+                step="1">
+
+        </div>
+
+        <br>
+
+        <!-- Output bonus -->
+
+        <div>
+
+            <label>
+                Tổng tiền:
+            </label>
+
+            <output>
+                69.960.000đ
+            </output>
+
+        </div>
+
+        <br>
+
+        <!-- Meter bonus -->
+
+        <div>
+
+            <label for="point">
+                Điểm tích lũy:
+            </label>
+
+            <meter
+                id="point"
+                min="0"
+                max="100"
+                value="75">
+            </meter>
+
+        </div>
+
+        <br>
+
+        <!-- Submit -->
+
+        <button
+            type="submit"
+            aria-label="Xác nhận đặt hàng">
+
+            Xác nhận đặt hàng
+
+        </button>
+
+        <button type="reset">
+            Reset
+        </button>
+
+    </form>
+
+</body>
+
+</html>

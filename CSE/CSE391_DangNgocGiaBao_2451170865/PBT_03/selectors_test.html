@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Selectors Test</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        .price {
+            color: blue;
+            font-weight: bold;
+        }
+
+        #app header {
+            border: 2px solid black;
+            padding: 15px;
+        }
+
+        nav a:first-child {
+            background-color: yellow;
+        }
+
+        .product.featured h2 {
+            background-color: lightgreen;
+        }
+
+        article > p {
+            border-bottom: 1px dashed gray;
+        }
+
+        a[href="/"] {
+            color: purple;
+        }
+
+        .top-bar.dark h1 {
+            text-transform: uppercase;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Kiểm chứng CSS Selectors</h1>
+
+    <div id="app">
+
+        <header class="top-bar dark">
+
+            <h1>ShopTLU</h1>
+
+            <nav>
+
+                <a href="/" class="active">
+                    Home
+                </a>
+
+                <a href="/products">
+                    Products
+                </a>
+
+                <a href="/about">
+                    About
+                </a>
+
+            </nav>
+
+        </header>
+
+        <br>
+
+        <main>
+
+            <!-- Product 1 -->
+
+            <article class="product">
+
+                <h2>iPhone 16</h2>
+
+                <p class="price">
+                    25.990.000đ
+                </p>
+
+                <p>
+                    Mô tả sản phẩm...
+                </p>
+
+            </article>
+
+            <br>
+
+            <!-- Product 2 -->
+
+            <article class="product featured">
+
+                <h2>MacBook Pro</h2>
+
+                <p class="price">
+                    45.990.000đ
+                </p>
+
+                <p>
+                    Mô tả sản phẩm...
+                </p>
+
+            </article>
+
+        </main>
+
+    </div>
+
+    <hr>
+
+    <h2>Kết quả kiểm chứng</h2>
+
+    <ol>
+
+        <li>
+            <strong>h1</strong> → Chọn:
+            ShopTLU
+        </li>
+
+        <li>
+            <strong>.price</strong> → Chọn:
+            25.990.000đ và 45.990.000đ
+        </li>
+
+        <li>
+            <strong>#app header</strong> → Chọn toàn bộ header
+        </li>
+
+        <li>
+            <strong>nav a:first-child</strong> → Chọn:
+            Home
+        </li>
+
+        <li>
+            <strong>.product.featured h2</strong> → Chọn:
+            MacBook Pro
+        </li>
+
+        <li>
+            <strong>article > p</strong> → Chọn tất cả p trực tiếp trong article
+        </li>
+
+        <li>
+            <strong>a[href="/"]</strong> → Chọn:
+            Home
+        </li>
+
+        <li>
+            <strong>.top-bar.dark h1</strong> → Chọn:
+            ShopTLU
+        </li>
+
+    </ol>
+
+</body>
+
+</html>
+
+câu A4
+Cho element:
+
+<p class="price" id="main-price">
+    Giá sản phẩm
+</p>
+
+Và các CSS rules:
+
+p { color: black; }          /* Rule A */
+
+.price { color: blue; }      /* Rule B */
+
+#main-price { color: red; }  /* Rule C */
+
+p.price { color: green; }    /* Rule D */
+1. Tính specificity score
+Rule	Selector	Score
+A	p	(0,0,1)
+B	.price	(0,1,0)
+C	#main-price	(1,0,0)
+D	p.price	(0,1,1)
+2. Element sẽ có màu gì? Giải thích
+Kết quả
+red
+Giải thích
+
+Rule C:
+
+#main-price {
+    color: red;
+}
+
+có ID selector nên specificity cao nhất.
+
+So sánh:
+
+(1,0,0) > (0,1,1)
+
+nên browser chọn màu đỏ.
+
+3. Nếu thêm inline style
+<p
+class="price"
+id="main-price"
+style="color: orange;">
+Kết quả
+orange
+Giải thích
+
+Inline CSS có độ ưu tiên cao hơn:
+
+ID
+Class
+Element selector
+4. Nếu Rule A thêm !important
+p {
+    color: black !important;
+}
+Kết quả
+black
+Giải thích
+
+!important override specificity thông thường nên:
+
+color: black !important;
+
+sẽ thắng cả rule có ID selector.
