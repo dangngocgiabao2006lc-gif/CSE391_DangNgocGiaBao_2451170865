@@ -1,0 +1,48 @@
+# keyboard_app/index.html
+
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Keyboard Shortcuts App</h1>
+        <p>← → chuyển ảnh | Space play/pause | Ctrl+K mở command palette</p>
+    </header>
+
+    <main>
+        <div class="gallery-container">
+            <button id="prevBtn" aria-label="Ảnh trước">◀</button>
+
+            <img id="galleryImage" src="https://picsum.photos/id/1015/700/400" alt="Gallery Image">
+
+            <button id="nextBtn" aria-label="Ảnh tiếp theo">▶</button>
+        </div>
+
+        <div class="thumbnail-list" id="thumbnailList"></div>
+    </main>
+
+    <div id="imageModal" class="modal hidden">
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Preview">
+        </div>
+    </div>
+
+    <div id="commandPalette" class="palette hidden">
+        <div class="palette-box">
+            <input type="text" id="commandInput" placeholder="Nhập command..." aria-label="Command Input">
+            <ul id="commandList"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+

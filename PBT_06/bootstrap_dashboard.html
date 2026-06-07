@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+        }
+
+        .main-content {
+            margin-left: 250px;
+        }
+
+        @media (max-width: 991px) {
+            .sidebar {
+                position: relative !important;
+                width: 100%;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<!-- Sidebar -->
+<div class="sidebar position-fixed bg-dark text-white p-3">
+
+    <h3 class="mb-4">Admin Panel</h3>
+
+    <div class="list-group">
+
+        <a href="#" class="list-group-item list-group-item-action active">
+            Dashboard
+        </a>
+
+        <a href="#" class="list-group-item list-group-item-action">
+            Orders
+        </a>
+
+        <a href="#" class="list-group-item list-group-item-action">
+            Products
+        </a>
+
+        <a href="#" class="list-group-item list-group-item-action">
+            Customers
+        </a>
+
+        <a href="#" class="list-group-item list-group-item-action">
+            Settings
+        </a>
+
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+
+    <!-- Topbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">Home</li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="ms-auto dropdown">
+
+            <button class="btn btn-outline-primary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown">
+
+                Admin User
+
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Content -->
+    <div class="container-fluid p-4">
+
+        <!-- Alert -->
+        <div class="alert alert-success alert-dismissible fade show">
+
+            Đăng nhập thành công!
+
+            <button class="btn-close"
+                    data-bs-dismiss="alert">
+            </button>
+
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="row g-4 mb-4">
+
+            <div class="col-12 col-md-6 col-xl-3">
+
+                <div class="card bg-primary text-white">
+
+                    <div class="card-body">
+
+                        <h5>Tổng đơn hàng</h5>
+
+                        <h2>1,250</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+
+                <div class="card bg-success text-white">
+
+                    <div class="card-body">
+
+                        <h5>Doanh thu</h5>
+
+                        <h2>850M</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+
+                <div class="card bg-warning text-dark">
+
+                    <div class="card-body">
+
+                        <h5>Khách hàng</h5>
+
+                        <h2>540</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-3">
+
+                <div class="card bg-danger text-white">
+
+                    <div class="card-body">
+
+                        <h5>Đơn hủy</h5>
+
+                        <h2>35</h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Table -->
+        <div class="card mb-4">
+
+            <div class="card-header bg-dark text-white">
+
+                Danh sách đơn hàng
+
+            </div>
+
+            <div class="card-body table-responsive">
+
+                <table class="table table-striped table-hover align-middle">
+
+                    <thead class="table-primary">
+
+                        <tr>
+                            <th>#</th>
+                            <th>Khách hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Trạng thái</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>Nguyễn Văn A</td>
+                            <td>iPhone 16</td>
+                            <td>25.990.000đ</td>
+                            <td>
+                                <span class="badge bg-success">
+                                    Hoàn thành
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Trần Thị B</td>
+                            <td>MacBook Pro</td>
+                            <td>45.990.000đ</td>
+                            <td>
+                                <span class="badge bg-warning text-dark">
+                                    Đang xử lý
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Lê Văn C</td>
+                            <td>AirPods</td>
+                            <td>5.200.000đ</td>
+                            <td>
+                                <span class="badge bg-danger">
+                                    Đã hủy
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- Search + Filter -->
+        <div class="card mb-4">
+
+            <div class="card-header">
+
+                Tìm kiếm đơn hàng
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                🔍
+                            </span>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Tìm kiếm sản phẩm">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <select class="form-select">
+
+                            <option>Chọn trạng thái</option>
+                            <option>Hoàn thành</option>
+                            <option>Đang xử lý</option>
+                            <option>Đã hủy</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <button class="btn btn-primary w-100">
+                            Lọc
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Accordion -->
+        <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq1">
+
+                        Dashboard dùng để làm gì?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq1"
+                     class="accordion-collapse collapse show"
+                     data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Dashboard giúp quản lý dữ liệu đơn hàng,
+                        khách hàng và doanh thu.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="accordion-item">
+
+                <h2 class="accordion-header">
+
+                    <button class="accordion-button collapsed"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+
+                        Bootstrap có responsive không?
+
+                    </button>
+
+                </h2>
+
+                <div id="faq2"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#faqAccordion">
+
+                    <div class="accordion-body">
+
+                        Có. Bootstrap hỗ trợ responsive grid system.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

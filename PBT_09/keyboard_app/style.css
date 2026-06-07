@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #111827;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: 700px;
+    max-width: 90%;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+button {
+    background: #2563eb;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:focus,
+input:focus {
+    outline: 3px solid #facc15;
+}
+
+.thumbnail-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.thumbnail-list img {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.thumbnail-list img.active,
+.thumbnail-list img:hover {
+    opacity: 1;
+    border: 3px solid #3b82f6;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+.palette {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 120px;
+}
+
+.palette-box {
+    background: #1f2937;
+    width: 500px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.palette-box input {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    background: #111827;
+    color: white;
+    font-size: 16px;
+}
+
+#commandList {
+    list-style: none;
+}
+
+#commandList li {
+    padding: 14px 18px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+#commandList li:hover {
+    background: #374151;
+}

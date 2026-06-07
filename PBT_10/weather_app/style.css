@@ -1,0 +1,16 @@
+body{
+    font-family: Arial;
+    padding:20px;
+}
+
+#loading{
+    color:blue;
+}
+
+#error{
+    color:red;
+}
+
+.history-btn{
+    margin:5px;
+}

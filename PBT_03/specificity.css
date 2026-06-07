@@ -1,0 +1,51 @@
+/* specificity.css */
+
+/* Rule 1 */
+p {
+    color: black;
+}
+
+/* Rule 2 */
+.text {
+    color: blue;
+}
+
+/* Rule 3 */
+.highlight {
+    color: green;
+}
+
+/* Rule 4 */
+p.text {
+    color: orange;
+}
+
+/* Rule 5 */
+p.highlight {
+    color: brown;
+}
+
+/* Rule 6 */
+.text.highlight {
+    color: purple;
+}
+
+/* Rule 7 */
+body p {
+    color: pink;
+}
+
+/* Rule 8 */
+#demo {
+    color: red;
+}
+
+/* Rule 9 */
+p#demo {
+    color: teal;
+}
+
+/* Rule 10 */
+body p#demo.text.highlight {
+    color: gold;
+}
